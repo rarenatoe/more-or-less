@@ -1,6 +1,10 @@
 # Changelog
 
-## [0.1.0](https://github.com/rarenatoe/react-native-more-or-less/tree/0.0.0) (2022-05-19)
+## [v0.1.0](https://github.com/rarenatoe/react-native-more-or-less/tree/v0.1.0) (2022-05-19)
+
+[Full Changelog](https://github.com/rarenatoe/react-native-more-or-less/compare/0.0.0...v0.1.0)
+
+## [0.0.0](https://github.com/rarenatoe/react-native-more-or-less/tree/0.0.0) (2022-05-19)
 
 [Full Changelog](https://github.com/rarenatoe/react-native-more-or-less/compare/9adca20394369c339d95bb5fc957a448d871c957...0.0.0)
 
