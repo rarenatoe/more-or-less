@@ -13,17 +13,16 @@ import {
 import { usePrevious, useToggle } from './hooks';
 import DefaultText from './DefaultText';
 
-export type TextWrapperProps = Omit<TextProps, 'children'> & {
-  textComponent?: React.ComponentType<TextProps>;
-  children: string;
-};
-
 type MoreOrLessProps = {
+  children: string;
   numberOfLines: number;
   onMorePress?: () => void;
   containerStyle?: ViewStyle;
+  moreText?: string;
+  lessText?: string;
   textStyle?: TextStyle;
-} & Omit<TextWrapperProps, 'style'>;
+  textComponent?: React.ComponentType<TextProps>;
+} & Pick<TextProps, 'ellipsizeMode'>;
 
 const MoreOrLess = ({
   children,
@@ -31,6 +30,8 @@ const MoreOrLess = ({
   onMorePress: customOnMorePress,
   textComponent: TextComponent = DefaultText,
   containerStyle,
+  moreText = 'more',
+  lessText = 'less',
   textStyle,
 }: MoreOrLessProps) => {
   const {
@@ -102,7 +103,7 @@ const MoreOrLess = ({
             <TextComponent style={textStyle}>
               <TextComponent>{children}</TextComponent>
               {/* The whitespace before less is NOT a bug, quite the opposite */}
-              <TextComponent onPress={shrinkText}> less</TextComponent>
+              <TextComponent onPress={shrinkText}> {lessText}</TextComponent>
             </TextComponent>
           ) : (
             <View>
@@ -129,7 +130,9 @@ const MoreOrLess = ({
                   </TextComponent>
                 </View>
                 {onMorePress && (
-                  <TextComponent onPress={onMorePress}>more</TextComponent>
+                  <TextComponent onPress={onMorePress}>
+                    {moreText}
+                  </TextComponent>
                 )}
               </View>
             </View>
