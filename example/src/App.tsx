@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { MoreOrLess } from 'react-native-more-or-less';
+import { MoreOrLess } from '@rntext/more-or-less';
 import CustomText from './CustomText';
 
 export default function App() {

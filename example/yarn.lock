@@ -4517,6 +4517,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"more-or-less-example@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "more-or-less-example@workspace:."
+  dependencies:
+    "@babel/core": ^7.12.10
+    "@babel/runtime": ^7.12.5
+    babel-plugin-module-resolver: ^4.0.0
+    metro-react-native-babel-preset: ^0.64.0
+    react: 16.13.1
+    react-native: 0.63.4
+  languageName: unknown
+  linkType: soft
+
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -5151,19 +5164,6 @@ __metadata:
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
   languageName: node
   linkType: hard
-
-"react-native-more-or-less-example@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "react-native-more-or-less-example@workspace:."
-  dependencies:
-    "@babel/core": ^7.12.10
-    "@babel/runtime": ^7.12.5
-    babel-plugin-module-resolver: ^4.0.0
-    metro-react-native-babel-preset: ^0.64.0
-    react: 16.13.1
-    react-native: 0.63.4
-  languageName: unknown
-  linkType: soft
 
 "react-native@npm:0.63.4":
   version: 0.63.4

@@ -1,4 +1,4 @@
-# react-native-more-or-less
+# @rntext/more-or-less
 
 A React Native component that renders text with more/less buttons in just 2 renders.
 
@@ -13,19 +13,19 @@ A React Native component that renders text with more/less buttons in just 2 rend
 ## Installation
 
 ```sh
-npm install react-native-more-or-less
+npm install more-or-less
 ```
 
 or
 
 ```sh
-yarn add react-native-more-or-less
+yarn add more-or-less
 ```
 
 ## Usage
 
 ```ts
-import { MoreOrLess } from "react-native-more-or-less";
+import { MoreOrLess } from "more-or-less";
 
 // ...
 
@@ -61,8 +61,8 @@ export default function App() {
 ## Run example
 
 ```sh
-git clone https://github.com/rarenatoe/react-native-more-or-less.git
-cd react-native-more-or-less/example
+git clone https://github.com/rarenatoe/more-or-less.git
+cd more-or-less/example
 yarn install # or npm install
 # to run on iOS
 yarn ios

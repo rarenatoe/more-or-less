@@ -1,6 +1,6 @@
 {
-  "name": "react-native-more-or-less-example",
-  "description": "Example app for react-native-more-or-less",
+  "name": "more-or-less-example",
+  "description": "Example app for more-or-less",
   "version": "0.0.1",
   "private": true,
   "scripts": {

@@ -1,5 +1,5 @@
 {
-  "name": "react-native-more-or-less",
+  "name": "@rntext/more-or-less",
   "version": "0.3.0",
   "description": "A React Native Wrapper that renders text with more/less buttons in just 2 renders.",
   "main": "lib/commonjs/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-more-or-less.podspec",
+    "more-or-less.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -41,13 +41,13 @@
     "expand",
     "shrink"
   ],
-  "repository": "https://github.com/rarenatoe/react-native-more-or-less",
+  "repository": "https://github.com/rarenatoe/more-or-less",
   "author": "Renato Alegre <renatoealegre@gmail.com> (https://github.com/rarenatoe)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rarenatoe/react-native-more-or-less/issues"
+    "url": "https://github.com/rarenatoe/more-or-less/issues"
   },
-  "homepage": "https://github.com/rarenatoe/react-native-more-or-less#readme",
+  "homepage": "https://github.com/rarenatoe/more-or-less#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
