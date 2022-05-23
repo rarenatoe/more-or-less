@@ -13,19 +13,19 @@ A React Native component that renders text with more/less buttons in just 2 rend
 ## Installation
 
 ```sh
-npm install more-or-less
+npm install @rntext/more-or-less
 ```
 
 or
 
 ```sh
-yarn add more-or-less
+yarn add @rntext/more-or-less
 ```
 
 ## Usage
 
 ```ts
-import { MoreOrLess } from "more-or-less";
+import { MoreOrLess } from "@rntext/more-or-less";
 
 // ...
 
