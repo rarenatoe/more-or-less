@@ -7,7 +7,7 @@ const DefaultText = React.forwardRef<Ref, TextProps>(
   ({ style: customStyle, ...props }, ref) => (
     <Text
       ref={ref}
-      style={[styles.default, customStyle, props.onPress && styles.pressable]}
+      style={[styles.default, props.onPress && styles.pressable, customStyle]}
       {...props}
     />
   )

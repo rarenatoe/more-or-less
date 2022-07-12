@@ -3,6 +3,7 @@ import {
   NativeSyntheticEvent,
   Platform,
   StyleSheet,
+  Text,
   TextLayoutEventData,
   TextLayoutLine,
   TextProps,
@@ -11,27 +12,28 @@ import {
   ViewStyle,
 } from 'react-native';
 import { usePrevious, useToggle } from './hooks';
-import DefaultText from './DefaultText';
 
 type MoreOrLessProps = {
   children: string;
+  containerStyle?: ViewStyle;
   numberOfLines: number;
   onMorePress?: () => void;
-  containerStyle?: ViewStyle;
   moreText?: string;
   lessText?: string;
-  textStyle?: TextStyle;
+  textButtonStyle?: TextStyle;
   textComponent?: React.ComponentType<TextProps>;
+  textStyle?: TextStyle;
 } & Pick<TextProps, 'ellipsizeMode'>;
 
 const MoreOrLess = ({
   children,
+  containerStyle,
   numberOfLines,
   onMorePress: customOnMorePress,
-  textComponent: TextComponent = DefaultText,
-  containerStyle,
   moreText = 'more',
   lessText = 'less',
+  textButtonStyle,
+  textComponent: TextComponent = Text,
   textStyle,
 }: MoreOrLessProps) => {
   const {
@@ -43,6 +45,11 @@ const MoreOrLess = ({
   const [hasMore, setHasMore] = React.useState(false);
   const previousNumberOfLines = usePrevious(numberOfLines);
   const previousLines = usePrevious(lines);
+  const buttonStyleArray = [
+    textStyle,
+    styles.pressableDefault,
+    textButtonStyle,
+  ];
 
   React.useEffect(() => {
     if (lines !== null && numberOfLines !== previousNumberOfLines)
@@ -102,8 +109,10 @@ const MoreOrLess = ({
           {isExpanded && !customOnMorePress ? (
             <TextComponent style={textStyle}>
               <TextComponent>{children}</TextComponent>
-              {/* The whitespace before less is NOT a bug, quite the opposite */}
-              <TextComponent onPress={shrinkText}> {lessText}</TextComponent>
+              <TextComponent style={buttonStyleArray} onPress={shrinkText}>
+                {' '}
+                {lessText}
+              </TextComponent>
             </TextComponent>
           ) : (
             <View>
@@ -130,7 +139,7 @@ const MoreOrLess = ({
                   </TextComponent>
                 </View>
                 {onMorePress && (
-                  <TextComponent onPress={onMorePress}>
+                  <TextComponent style={buttonStyleArray} onPress={onMorePress}>
                     {moreText}
                   </TextComponent>
                 )}
@@ -148,6 +157,7 @@ type MoreOrLessStyles = {
   ellipsedText: TextStyle;
   hiddenTextAbsolute: TextStyle;
   lastLine: TextStyle;
+  pressableDefault: TextStyle;
 };
 
 export const styles = StyleSheet.create<MoreOrLessStyles>({
@@ -163,6 +173,10 @@ export const styles = StyleSheet.create<MoreOrLessStyles>({
   },
   lastLine: {
     flexDirection: 'row',
+  },
+  pressableDefault: {
+    color: '#36BDE8',
+    fontWeight: 'bold',
   },
 });
 

@@ -14,6 +14,7 @@ export default function App() {
           numberOfLines={5}
           textComponent={CustomText}
           textStyle={styles.text}
+          textButtonStyle={styles.textButton}
         >
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -38,6 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: { color: 'green' },
+  textButton: { color: 'red' },
   textContainer: {
     backgroundColor: 'white',
     padding: 16,

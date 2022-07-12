@@ -57,6 +57,17 @@ export default function App() {
 | onMorePress | () => void | no | expandText | Function used for the more button |
 | containerStyle | ViewStyle | no | undefined | Style for the container View |
 | textStyle | TextStyle | no | undefined | Style for the Text component |
+| buttonTextStyle | TextStyle | no | undefined | Style for the Text Button |
+
+### Text styling
+
+For the text buttons styling, the `textComponent` will receive the following styles into `style` prop in the following order:
+
+1. Apply `textStyle`.
+2. Apply the default button styling: `{ color: '#36BDE8', fontWeight: 'bold' }`.
+3. Apply `textButtonStyle`.
+
+Where each next style, potentially replaces the previous one.
 
 ## Run example
 
