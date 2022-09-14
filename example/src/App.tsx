@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { StyleSheet, View } from 'react-native';
 import { MoreOrLess } from '@rntext/more-or-less';
+import { Platform, StyleSheet, View } from 'react-native';
 import CustomText from './CustomText';
 
 export default function App() {
@@ -32,16 +32,26 @@ export default function App() {
   );
 }
 
+const fontFamily = Platform.select({
+  ios: 'Menlo',
+  android: 'monospace',
+  default: 'Menlo',
+});
+
 const styles = StyleSheet.create({
-  appContainer: { flex: 1, backgroundColor: 'orange', padding: 24 },
-  center: { flex: 2 },
+  appContainer: { flex: 1, backgroundColor: 'lightblue', padding: 24 },
+  center: { flex: 8 },
   container: {
     flex: 1,
   },
-  text: { color: 'green' },
-  textButton: { color: 'red' },
+  text: {
+    color: 'mediumslateblue',
+    fontSize: 18,
+    fontFamily,
+  },
+  textButton: { color: 'darkviolet' },
   textContainer: {
-    backgroundColor: 'white',
+    backgroundColor: 'azure',
     padding: 16,
     borderRadius: 16,
   },
