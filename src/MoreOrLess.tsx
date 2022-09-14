@@ -108,7 +108,7 @@ const MoreOrLess = ({
         <View>
           {isExpanded && !customOnMorePress ? (
             <TextComponent style={textStyle}>
-              <TextComponent>{children}</TextComponent>
+              <TextComponent style={textStyle}>{children}</TextComponent>
               <TextComponent style={buttonStyleArray} onPress={shrinkText}>
                 {' '}
                 {lessText}
