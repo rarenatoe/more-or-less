@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { ComponentType, useCallback, useEffect, useMemo } from 'react';
 import {
   NativeSyntheticEvent,
-  Platform,
   StyleSheet,
   Text,
   TextLayoutEventData,
@@ -11,6 +10,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import ClippedShrunkText from './ClippedShrunkText';
 import { usePrevious, useToggle } from './hooks';
 
 type MoreOrLessProps = {
@@ -21,7 +21,7 @@ type MoreOrLessProps = {
   moreText?: string;
   lessText?: string;
   textButtonStyle?: TextStyle;
-  textComponent?: React.ComponentType<TextProps>;
+  textComponent?: ComponentType<TextProps>;
   textStyle?: TextStyle;
 } & Pick<TextProps, 'ellipsizeMode'>;
 
@@ -43,11 +43,11 @@ const MoreOrLess = ({
   const previousLines = usePrevious(lines);
   const buttonStyleArray = [textStyle, styles.pressableDefault, textButtonStyle];
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (lines !== null && numberOfLines !== previousNumberOfLines) setLines(null);
   }, [lines, numberOfLines, previousNumberOfLines]);
 
-  const onTextLayoutGetLines = React.useCallback(
+  const onTextLayoutGetLines = useCallback(
     (event: NativeSyntheticEvent<TextLayoutEventData>) => {
       const _lines = [...event.nativeEvent.lines];
 
@@ -66,7 +66,7 @@ const MoreOrLess = ({
     [numberOfLines]
   );
 
-  const onMorePress = React.useMemo(
+  const onMorePress = useMemo(
     () => (hasMore ? customOnMorePress ?? expandText : null),
     [customOnMorePress, expandText, hasMore]
   );
@@ -96,44 +96,38 @@ const MoreOrLess = ({
   if (linesToRender)
     return (
       <View style={containerStyle}>
-        <View>
-          {isExpanded && !customOnMorePress ? (
-            <TextComponent style={textStyle}>
-              <TextComponent style={textStyle}>{children}</TextComponent>
-              <TextComponent style={buttonStyleArray} onPress={shrinkText}>
-                {' '}
-                {lessText}
-              </TextComponent>
+        {isExpanded && !customOnMorePress ? (
+          <TextComponent style={textStyle}>
+            <TextComponent style={textStyle}>{children}</TextComponent>
+            <TextComponent style={buttonStyleArray} onPress={shrinkText}>
+              {' '}
+              {lessText}
             </TextComponent>
-          ) : (
-            <View>
-              {linesToRender.length > 1 && (
-                // Render the first N-1 lines at full width
-                <TextComponent
-                  style={textStyle}
-                  numberOfLines={Math.min(numberOfLines, linesToRender.length) - 1}
-                  ellipsizeMode="clip"
-                >
-                  {Platform.OS === 'ios'
-                    ? linesToRender.slice(0, linesToRender.length - 1).map((line) => line.text)
-                    : children}
+          </TextComponent>
+        ) : (
+          <View>
+            <ClippedShrunkText
+              linesToRender={linesToRender}
+              numberOfLines={numberOfLines}
+              textComponent={TextComponent}
+              textStyle={textStyle}
+            >
+              {children}
+            </ClippedShrunkText>
+            <View style={styles.lastLine}>
+              <View style={styles.ellipsedText}>
+                <TextComponent style={textStyle} numberOfLines={1}>
+                  {linesToRender[linesToRender.length - 1].text}
+                </TextComponent>
+              </View>
+              {onMorePress && (
+                <TextComponent style={buttonStyleArray} onPress={onMorePress}>
+                  {moreText}
                 </TextComponent>
               )}
-              <View style={styles.lastLine}>
-                <View style={styles.ellipsedText}>
-                  <TextComponent style={textStyle} numberOfLines={1}>
-                    {linesToRender[linesToRender.length - 1].text}
-                  </TextComponent>
-                </View>
-                {onMorePress && (
-                  <TextComponent style={buttonStyleArray} onPress={onMorePress}>
-                    {moreText}
-                  </TextComponent>
-                )}
-              </View>
             </View>
-          )}
-        </View>
+          </View>
+        )}
       </View>
     );
 

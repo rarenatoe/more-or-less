@@ -31,7 +31,7 @@ const ClippedShrunkText = ({
   );
 
   if (linesToRender.length < 2) return null;
-  // Render the first N-1 lines at full width
+
   return (
     <TextComponent style={textStyle} numberOfLines={numberOfLinesToClip} ellipsizeMode="clip">
       {text}
