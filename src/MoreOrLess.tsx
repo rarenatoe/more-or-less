@@ -36,24 +36,15 @@ const MoreOrLess = ({
   textComponent: TextComponent = Text,
   textStyle,
 }: MoreOrLessProps) => {
-  const {
-    value: isExpanded,
-    setTrue: expandText,
-    setFalse: shrinkText,
-  } = useToggle(false);
+  const { value: isExpanded, setTrue: expandText, setFalse: shrinkText } = useToggle(false);
   const [lines, setLines] = React.useState<TextLayoutLine[] | null>(null);
   const [hasMore, setHasMore] = React.useState(false);
   const previousNumberOfLines = usePrevious(numberOfLines);
   const previousLines = usePrevious(lines);
-  const buttonStyleArray = [
-    textStyle,
-    styles.pressableDefault,
-    textButtonStyle,
-  ];
+  const buttonStyleArray = [textStyle, styles.pressableDefault, textButtonStyle];
 
   React.useEffect(() => {
-    if (lines !== null && numberOfLines !== previousNumberOfLines)
-      setLines(null);
+    if (lines !== null && numberOfLines !== previousNumberOfLines) setLines(null);
   }, [lines, numberOfLines, previousNumberOfLines]);
 
   const onTextLayoutGetLines = React.useCallback(
@@ -120,15 +111,11 @@ const MoreOrLess = ({
                 // Render the first N-1 lines at full width
                 <TextComponent
                   style={textStyle}
-                  numberOfLines={
-                    Math.min(numberOfLines, linesToRender.length) - 1
-                  }
+                  numberOfLines={Math.min(numberOfLines, linesToRender.length) - 1}
                   ellipsizeMode="clip"
                 >
                   {Platform.OS === 'ios'
-                    ? linesToRender
-                        .slice(0, linesToRender.length - 1)
-                        .map((line) => line.text)
+                    ? linesToRender.slice(0, linesToRender.length - 1).map((line) => line.text)
                     : children}
                 </TextComponent>
               )}

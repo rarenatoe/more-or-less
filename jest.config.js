@@ -5,10 +5,7 @@ module.exports = {
       tsconfig: 'tsconfig.spec.json',
     },
   },
-  modulePathIgnorePatterns: [
-    '<rootDir>/example/node_modules',
-    '<rootDir>/lib/',
-  ],
+  modulePathIgnorePatterns: ['<rootDir>/example/node_modules', '<rootDir>/lib/'],
   transform: {
     '^.+\\.jsx$': 'babel-jest',
     '^.+\\.tsx?$': 'ts-jest',
