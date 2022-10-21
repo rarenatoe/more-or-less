@@ -53,11 +53,12 @@ export default function App() {
 |------|------|----------|---------|------|
 | children | string | yes | - | Text to be capped and formatted |
 | numberOfLines | number | yes | - | Number of lines at which it will cap the paragraph |
-| textComponent | ComponentType&lt;TextProps> | no | Text | Text component to use in all text |
-| onMorePress | () => void | no | expandText | Function used for the more button |
-| containerStyle | ViewStyle | no | undefined | Style for the container View |
-| textStyle | TextStyle | no | undefined | Style for the Text component |
+| animated | boolean | no | false | Whether to animate the expanding/shrinking or not |
 | buttonTextStyle | TextStyle | no | undefined | Style for the Text Button |
+| containerStyle | ViewStyle | no | undefined | Style for the container View |
+| onMorePress | () => void | no | expandText | Function used for the more button |
+| textComponent | ComponentType&lt;TextProps> | no | Text | Text component to use in all text |
+| textStyle | TextStyle | no | undefined | Style for the Text component |
 
 ### Text styling
 

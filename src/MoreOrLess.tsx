@@ -1,17 +1,24 @@
 import React, { ComponentType, useCallback, useEffect, useMemo } from 'react';
 import {
+  LayoutAnimation,
   NativeSyntheticEvent,
+  Platform,
   StyleSheet,
   Text,
   TextLayoutEventData,
   TextLayoutLine,
   TextProps,
   TextStyle,
+  UIManager,
   View,
   ViewStyle,
 } from 'react-native';
 import ClippedShrunkText from './ClippedShrunkText';
 import { usePrevious, useToggle } from './hooks';
+
+if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 type MoreOrLessProps = {
   children: string;
@@ -23,9 +30,11 @@ type MoreOrLessProps = {
   textButtonStyle?: TextStyle;
   textComponent?: ComponentType<TextProps>;
   textStyle?: TextStyle;
+  animated?: boolean;
 } & Pick<TextProps, 'ellipsizeMode'>;
 
 const MoreOrLess = ({
+  animated = false,
   children,
   containerStyle,
   numberOfLines,
@@ -46,6 +55,16 @@ const MoreOrLess = ({
   useEffect(() => {
     if (lines !== null && numberOfLines !== previousNumberOfLines) setLines(null);
   }, [lines, numberOfLines, previousNumberOfLines]);
+
+  useEffect(() => {
+    if (animated)
+      LayoutAnimation.configureNext({
+        duration: 600,
+        create: { type: 'linear', property: 'opacity' },
+        update: { type: 'spring', springDamping: 2 },
+        delete: { type: 'linear', property: 'opacity' },
+      });
+  }, [animated, isExpanded]);
 
   const onTextLayoutGetLines = useCallback(
     (event: NativeSyntheticEvent<TextLayoutEventData>) => {
