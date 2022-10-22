@@ -1,6 +1,6 @@
 {
   "name": "@rntext/more-or-less",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "A React Native Wrapper that renders text with more/less buttons in just 2 renders.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
