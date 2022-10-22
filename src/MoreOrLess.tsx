@@ -50,7 +50,7 @@ const MoreOrLess = ({
   const [hasMore, setHasMore] = React.useState(false);
   const previousNumberOfLines = usePrevious(numberOfLines);
   const previousLines = usePrevious(lines);
-  const buttonStyleArray = [textStyle, styles.pressableDefault, textButtonStyle];
+  const buttonStyleArray = [textStyle, textButtonStyle];
 
   useEffect(() => {
     if (lines !== null && numberOfLines !== previousNumberOfLines) setLines(null);
@@ -157,10 +157,9 @@ type MoreOrLessStyles = {
   ellipsedText: TextStyle;
   hiddenTextAbsolute: TextStyle;
   lastLine: TextStyle;
-  pressableDefault: TextStyle;
 };
 
-export const styles = StyleSheet.create<MoreOrLessStyles>({
+const styles = StyleSheet.create<MoreOrLessStyles>({
   ellipsedText: {
     flex: 1,
   },
@@ -173,10 +172,6 @@ export const styles = StyleSheet.create<MoreOrLessStyles>({
   },
   lastLine: {
     flexDirection: 'row',
-  },
-  pressableDefault: {
-    color: '#36BDE8',
-    fontWeight: 'bold',
   },
 });
 
