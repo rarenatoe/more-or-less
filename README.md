@@ -62,13 +62,14 @@ export default function App() {
 
 ### Text styling
 
-For the text buttons styling, the `textComponent` will receive the following styles into `style` prop in the following order:
+MoreOrLess will merge the following into the `style` prop or `textComponent`:
 
 1. Apply `textStyle`.
-2. Apply the default button styling: `{ color: '#36BDE8', fontWeight: 'bold' }`.
-3. Apply `textButtonStyle`.
+2. Then if it is a button:
+    1. Apply the default button styling: `{ color: '#36BDE8', fontWeight: 'bold' }`.
+    2. Apply `textButtonStyle`.
 
-Where each next style, potentially replaces the previous one.
+Where each style potentially replaces the previous one.
 
 ## Run example
 
