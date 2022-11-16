@@ -56,6 +56,8 @@ export default function App() {
 |------|------|----------|---------|------|
 | children | string | yes | - | Text to be capped and formatted |
 | numberOfLines | number | yes | - | Number of lines at which it will cap the paragraph |
+| moreText | string | no | 'more' | Text for the more button |
+| lessText | string | no | 'less' | Text for the less button |
 | animated | boolean | no | false | Whether to animate the expanding/shrinking or not |
 | buttonTextStyle | TextStyle | no | undefined | Style for the Text Button |
 | containerStyle | ViewStyle | no | undefined | Style for the container View |
