@@ -59,7 +59,7 @@ export default function App() {
 | moreText | string | no | 'more' | Text for the more button |
 | lessText | string | no | 'less' | Text for the less button |
 | animated | boolean | no | false | Whether to animate the expanding/shrinking or not |
-| buttonTextStyle | TextStyle | no | undefined | Style for the Text Button |
+| textButtonStyle | TextStyle | no | undefined | Style for the Text Button |
 | containerStyle | ViewStyle | no | undefined | Style for the container View |
 | onMorePress | () => void | no | expandText | Function used for the more button |
 | textComponent | ComponentType&lt;TextProps> | no | Text | Text component to use in all text |
