@@ -39,7 +39,7 @@ const fontFamily = Platform.select({
 
 const styles = StyleSheet.create({
   appContainer: { flex: 1, backgroundColor: 'lightblue', padding: 24 },
-  center: { flex: 8 },
+  center: { flex: 10 },
   container: {
     flex: 1,
   },
