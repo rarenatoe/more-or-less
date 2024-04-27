@@ -3918,7 +3918,7 @@ __metadata:
     "@testing-library/react-native": ^9.1.0
     "@types/jest": ^27.5.1
     "@types/react": 18.0.20
-    "@types/react-native": ^0.72.2
+    "@types/react-native": 0.72.2
     "@types/react-test-renderer": 17.0.2
     commitlint: ^11.0.0
     eslint: ^8.23.1
@@ -4217,7 +4217,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.72.2":
+"@types/react-native@npm:0.72.2":
   version: 0.72.2
   resolution: "@types/react-native@npm:0.72.2"
   dependencies:
