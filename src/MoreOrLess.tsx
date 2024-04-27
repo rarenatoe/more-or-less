@@ -48,6 +48,7 @@ const MoreOrLess = ({
   const { value: isExpanded, setTrue: expandText, setFalse: shrinkText } = useToggle(false);
   const [lines, setLines] = React.useState<TextLayoutLine[] | null>(null);
   const [hasMore, setHasMore] = React.useState(false);
+  const previousChildren = usePrevious(children);
   const previousNumberOfLines = usePrevious(numberOfLines);
   const previousLines = usePrevious(lines);
   const buttonStyleArray = [textStyle, styles.bold, textButtonStyle];
@@ -92,7 +93,8 @@ const MoreOrLess = ({
 
   if (!children) return null;
 
-  if (lines === null)
+  // Is rendered for the first time or children changed.
+  if (lines === null || previousChildren !== children)
     return (
       <View style={containerStyle}>
         <View>
