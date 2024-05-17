@@ -5343,7 +5343,7 @@ __metadata:
     "@react-native/metro-config": 0.72.12
     babel-plugin-module-resolver: ^5.0.0
     metro-react-native-babel-preset: ^0.76.5
-    react: 18.2.0
+    react: 18.3.0
     react-native: 0.72.0
   languageName: unknown
   linkType: soft
@@ -5973,12 +5973,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.2.0":
-  version: 18.2.0
-  resolution: "react@npm:18.2.0"
+"react@npm:18.3.0":
+  version: 18.3.0
+  resolution: "react@npm:18.3.0"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
+  checksum: f1389bf7f9cc9295fded895635e54c4bf73626a8ea51afaa2da4988f89e71b68f249c1782f832d5912ba7d437da9292fc44ecf7c3dff072879253df93d703a10
   languageName: node
   linkType: hard
 
