@@ -1,6 +1,6 @@
 {
   "name": "@rntext/more-or-less",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Alias for react-native-more-or-less-text",
   "dependencies": {
     "react-native-more-or-less-text": "^2.0.0"
