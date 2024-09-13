@@ -14,8 +14,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
     "target": "esnext"
   },
-  "exclude": ["**/node_modules"]
+  "include": ["src/**/*"]
 }

@@ -10699,7 +10699,7 @@ __metadata:
     ts-jest: ^29.0.1
     typescript: ^5.0.0
   peerDependencies:
-    react: "*"
+    react: ^18.0.0
     react-native: "*"
   languageName: unknown
   linkType: soft

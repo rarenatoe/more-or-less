@@ -1,4 +1,4 @@
-import React, { ComponentType, PropsWithChildren, useMemo } from 'react';
+import { ComponentType, PropsWithChildren, useMemo } from 'react';
 import { Platform, TextLayoutLine, TextProps, TextStyle } from 'react-native';
 
 type ClippedShrunkTextProps = PropsWithChildren<{
