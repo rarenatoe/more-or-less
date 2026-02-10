@@ -3808,7 +3808,7 @@ __metadata:
     expo-status-bar: ~1.12.1
     react: 18.3.1
     react-native: 0.74.5
-    react-native-more-or-less-text: ^3.0.0
+    react-native-more-or-less-text: ^3.0.3
     typescript: ^5.1.3
   languageName: unknown
   linkType: soft
@@ -7032,13 +7032,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-more-or-less-text@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "react-native-more-or-less-text@npm:3.0.0"
+"react-native-more-or-less-text@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "react-native-more-or-less-text@npm:3.0.3"
   peerDependencies:
-    react: "*"
+    react: ^18.0.0
     react-native: "*"
-  checksum: 3a39f672fdadf8723afefc1c67ec50ff28ba6b044b58821e8e75fd912cd305a4592cd92da7d2c0e7c1c0b9ffcb4ac91580c66539fb2dd6f91b5fbf78a70be0a4
+  checksum: 3282203cdaffd6ce837aa539e9e21c1466ffa23f28d6bb4cf3e0789818b44c90191bc134971e614abe72d48c2511e45a1b70d436714a5df57e908b69d0b0358b
   languageName: node
   linkType: hard
 
@@ -8407,7 +8407,7 @@ __metadata:
 
 "typescript@patch:typescript@^5.1.3#~builtin<compat/typescript>":
   version: 5.6.2
-  resolution: "typescript@patch:typescript@npm%3A5.6.2#~builtin<compat/typescript>::version=5.6.2&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A5.6.2#~builtin<compat/typescript>::version=5.6.2&hash=701156"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
